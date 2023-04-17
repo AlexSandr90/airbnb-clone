@@ -43,7 +43,6 @@ const LoginModal = () => {
         })
             .then((callback) => {
                 setIsLoading(false);
-                // @ts-ignore
                 if (callback?.ok) {
                     toast.success('Logged in');
                     router.refresh();
@@ -88,13 +87,13 @@ const LoginModal = () => {
                 outline
                 label={'Continue with Google'}
                 icon={FcGoogle}
-                onClick={() => {}}
+                onClick={() => signIn('google')}
             />
             <Button
                 outline
                 label={'Continue with GitHub'}
                 icon={AiFillGithub}
-                onClick={() => {}}
+                onClick={() => signIn('github')}
             />
             <div className='
                 text-neutral-500
