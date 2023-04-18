@@ -2,29 +2,10 @@
 
 import React from 'react';
 import Container from "../container/Container";
-import {TbBeach} from "react-icons/tb";
-import {GiWindmill} from "react-icons/gi";
-import {MdOutlineVilla} from "react-icons/md";
 import CategoryBox from "../categoryBox/CategoryBox";
 import {usePathname, useSearchParams} from "next/navigation";
+import {categories} from "./categoriesItems";
 
-export const categories = [
-    {
-        label: 'Beach',
-        icon: TbBeach,
-        description: 'This property is close to the beach!'
-    },
-    {
-        label: 'Windmills',
-        icon: GiWindmill,
-        description: 'This property has windmills!'
-    },
-    {
-        label: 'Modern',
-        icon: MdOutlineVilla,
-        description: 'This property is modern!'
-    },
-];
 
 const Categories = () => {
     const params =  useSearchParams();
@@ -53,13 +34,13 @@ const Categories = () => {
             >
                 {
                     categories.map((item) => {
-                        const {label, icon, description} = item;
+                        const {label, icon} = item;
                         return (
                             <CategoryBox
                                 key={label}
                                 label={label}
                                 icon={icon}
-                                description={description}
+                                selected={category === label}
                             />
                         )
                     })

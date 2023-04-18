@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import * as React from "react";
 
 const Logo = () => {
     const router = useRouter();
